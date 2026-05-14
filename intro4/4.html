@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+            padding: 0 10px 150px 10px;
+        }
+        dd.hide{
+            display: none;
+            height : 0px
+        }
+        li{
+            text-align: left;
+        }
+        *{
+            list-style: none;
+            padding : 0;
+            margin : 0;
+        }
+        
+        .sub-con-title{
+                margin: 20px 10px 10px 10px;
+        }
+        .intro_history dd>span {
+            display: block;
+        }
+        
+        .intro_history dl {
+            display: flex;
+        }
+
+        .intro_history dl .cyears1 {
+            position: relative;
+            display: block;
+            padding-top: 14px;
+            padding-left: 26px;
+            border-left: 2px solid #18429F;
+            margin-left: 20px;
+        }
+
+        .intro_history dl .cyears1:after {
+            display: block;
+            background: url(/images/posco-highschool/history-circle.svg) no-repeat;
+            width: 30px;
+            height: 24px;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -14px;
+            background-size: contain;
+        }
+
+        .intro_history dl .cyears {
+            cursor: pointer;
+        }
+
+        .intro_history dl .cyears>span {
+            font-size: 18px;
+            font-weight: 700;
+            color: #18429F;
+            padding-bottom: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .intro_history dl .cyears>span>div {
+            display: inline-block;
+            font-size: 14px;
+            background: #ecf5ff;
+            padding: 6px 12px;
+            border-radius: 10px;
+            color: #18429F;
+            font-weight: 600;
+        }
+
+        .intro_history dl .cyears1 i {
+            display: none;
+        }
+
+        .intro_history dl>div {
+            padding-bottom: 30px;
+            width: 100%;
+        }
+
+        .intro_history dl>div>dd>span {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .intro_history dl>div>dd>span:nth-child(2n) {
+            font-weight: 500;
+            padding-bottom: 4px;
+        }
+
+        /* 역대회장 */
+        .intro_chairman dl dd>div {
+            display: flex;
+        }
+
+        .intro_chairman dl dd .img_wrap {
+            margin-right: 12px;
+        }
+
+        .intro_chairman dl .cyears1:after {
+            background: url(./img/history-plus.svg) no-repeat;
+            width: 24px;
+            height: 24px;
+            left: -14px;
+        }
+
+        .intro_chairman dl .cyears>span {
+            padding-bottom: 14px;
+        }
+
+        .intro_chairman dl ul li {
+            padding-top: 16px;
+        }
+
+        .intro_chairman dl ul li span {
+            font-size: 18px;
+            font-weight: 600;
+            color: #18429F;
+        }
+
+        .intro_chairman dl ul li .txt_wrap {
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .intro_chairman dl ul li .txt_wrap>p {
+            font-weight: 600;
+        }
+
+        .intro_chairman dl ul li .txt_wrap>p:nth-child(2) {
+            background: #00B0F0;
+            margin-left: 4px;
+            padding: 0 8px 0 6px;
+            font-size: 14px;
+            color: #fff;
+            height: 23px;
+            display: flex;
+            align-items: center;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="sub-area">
+        <section class="sub-con-title">
+            <h1>역대회장</h1>
+        </section>
+        <div class="layout-wrap">
+            <div class="intro_history intro_chairman">
+                <div>
+
+                    <dl>
+                        <p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+                        <div>
+                            <dt class="cyears">
+                                <span>53대 회장</span>
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="img_wrap">
+                                        <img src="./img/chairman_532026.png"
+                                            style="width:126px; height:140px; border-radius:6em;">
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>2026년</span>
+                                                <div class="txt_wrap">
+                                                    <p>오재식</p>
+                                                    <p>졸업기수 21회</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <dl>
+                        <p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+                        <div>
+                            <dt class="cyears">
+                                <span>52대 회장</span>
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="img_wrap">
+                                        <img src="./img/chairman_52.png"
+                                            style="width:126px; height:140px; border-radius:6em;">
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>2025년</span>
+                                                <div class="txt_wrap">
+                                                    <p>이영동</p>
+                                                    <p>졸업기수 20회</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <dl>
+                        <p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+                        <div>
+                            <dt class="cyears">
+                                <span>51대 회장</span>
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="img_wrap">
+                                        <img src="./img/chairman_51.png">
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>2024년</span>
+                                                <div class="txt_wrap">
+                                                    <p>김동백</p>
+                                                    <p>졸업기수 19회</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <dl>
+                        <p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+                        <div>
+                            <dt class="cyears">
+                                <span>50대 회장</span>
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="img_wrap">
+                                        <img src="./img/chairman_50.png">
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>2023년</span>
+                                                <div class="txt_wrap">
+                                                    <p>이동열</p>
+                                                    <p>졸업기수 18회</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <dl>
+                        <p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+                        <div>
+                            <dt class="cyears">
+                                <span>49대 회장</span>
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="img_wrap">
+                                        <img src="./img/chairman_49.png">
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>2022년</span>
+                                                <div class="txt_wrap">
+                                                    <p>황교문</p>
+                                                    <p>졸업기수 17회</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <dl>
+                        <p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+                        <div>
+                            <dt class="cyears">
+                                <span>48대 회장</span>
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="img_wrap">
+                                        <img src="./img/chairman_48.png">
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>2021년</span>
+                                                <div class="txt_wrap">
+                                                    <p>이경창</p>
+                                                    <p>졸업기수 16회</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <dl>
+                        <p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+                        <div>
+                            <dt class="cyears">
+                                <span>47대 회장</span>
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="img_wrap">
+                                        <img src="./img/chairman_47.png">
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>2020년</span>
+                                                <div class="txt_wrap">
+                                                    <p>조환래</p>
+                                                    <p>졸업기수 16회</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <dl>
+                        <p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+                        <div>
+                            <dt class="cyears">
+                                <span>46대 회장</span>
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="img_wrap">
+                                        <img src="./img/chairman_46.png">
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>2019년</span>
+                                                <div class="txt_wrap">
+                                                    <p>정수화</p>
+                                                    <p>졸업기수 15회</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <dl>
+                        <p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+                        <div>
+                            <dt class="cyears">
+                                <span>45대 회장</span>
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="img_wrap">
+                                        <img src="./img/chairman_45.png">
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>2018년</span>
+                                                <div class="txt_wrap">
+                                                    <p>김삼수</p>
+                                                    <p>졸업기수 15회</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <dl>
+                        <p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+                        <div>
+                            <dt class="cyears">
+                                <span>44대 회장</span>
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="img_wrap">
+                                        <img src="./img/chairman_44.png">
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>2017년</span>
+                                                <div class="txt_wrap">
+                                                    <p>안대현</p>
+                                                    <p>졸업기수 14회</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <dl>
+                        <p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+                        <div>
+                            <dt class="cyears">
+                                <span>43대 회장</span>
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="img_wrap">
+                                        <img src="./img/chairman_43.png">
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>2016년</span>
+                                                <div class="txt_wrap">
+                                                    <p>김경한</p>
+                                                    <p>졸업기수 14회</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <dl>
+                        <p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+                        <div>
+                            <dt class="cyears">
+                                <span>42대 회장</span>
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="img_wrap">
+                                        <img src="./img/chairman_42.png">
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>2015년</span>
+                                                <div class="txt_wrap">
+                                                    <p>김영학</p>
+                                                    <p>졸업기수 13회</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <dl>
+                        <p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+                        <div>
+                            <dt class="cyears">
+                                <span>41대 회장</span>
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="img_wrap">
+                                        <img src="./img/chairman_41.png">
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>2014년</span>
+                                                <div class="txt_wrap">
+                                                    <p>손상락</p>
+                                                    <p>졸업기수 13회</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <dl>
+                        <p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+                        <div>
+                            <dt class="cyears">
+                                <span>40대 회장</span>
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="img_wrap">
+                                        <img src="./img/chairman_40.png">
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>2013년</span>
+                                                <div class="txt_wrap">
+                                                    <p>김종수</p>
+                                                    <p>졸업기수 12회</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <dl>
+                        <p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+                        <div>
+                            <dt class="cyears">
+                                <span>39대 회장</span>
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="img_wrap">
+                                        <img src="./img/chairman_39.png">
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>2012년</span>
+                                                <div class="txt_wrap">
+                                                    <p>오장윤</p>
+                                                    <p>졸업기수 12회</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <dl>
+                        <p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+                        <div>
+                            <dt class="cyears">
+                                <span>38대 회장</span>
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="img_wrap">
+                                        <img src="./img/chairman_38.png">
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>2011년</span>
+                                                <div class="txt_wrap">
+                                                    <p>김병구</p>
+                                                    <p>졸업기수 11회</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <dl>
+                        <p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+                        <div>
+                            <dt class="cyears">
+                                <span>37대 회장</span>
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="img_wrap">
+                                        <img src="./img/chairman_37.png">
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>2010년</span>
+                                                <div class="txt_wrap">
+                                                    <p>최규태</p>
+                                                    <p>졸업기수 11회</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <dl>
+                        <p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+                        <div>
+                            <dt class="cyears">
+                                <span>36대 회장</span>
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="img_wrap">
+                                        <img src="./img/chairman_36.png">
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>2009년</span>
+                                                <div class="txt_wrap">
+                                                    <p>유병종</p>
+                                                    <p>졸업기수 10회</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <dl>
+                        <p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+                        <div>
+                            <dt class="cyears">
+                                <span>35대 회장</span>
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="img_wrap">
+                                        <img src="./img/chairman_35.png">
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>2008년</span>
+                                                <div class="txt_wrap">
+                                                    <p>김동렬</p>
+                                                    <p>졸업기수 10회</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <dl>
+                        <p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+                        <div>
+                            <dt class="cyears">
+                                <span>34대 회장</span>
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="img_wrap">
+                                        <img src="./img/chairman_34.png">
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>2007년</span>
+                                                <div class="txt_wrap">
+                                                    <p>이희삼</p>
+                                                    <p>졸업기수 9회</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <dl>
+                        <p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+                        <div>
+                            <dt class="cyears">
+                                <span>33대 회장</span>
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="img_wrap">
+                                        <img src="./img/chairman_33.png">
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>2006년</span>
+                                                <div class="txt_wrap">
+                                                    <p>이용근</p>
+                                                    <p>졸업기수 9회</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <dl>
+                        <p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+                        <div>
+                            <dt class="cyears">
+                                <span>32대 회장</span>
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="img_wrap">
+                                        <img src="./img/chairman_32.png">
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>2005년</span>
+                                                <div class="txt_wrap">
+                                                    <p>이선호</p>
+                                                    <p>졸업기수 8회</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <dl>
+                        <p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+                        <div>
+                            <dt class="cyears">
+                                <span>31대 회장</span>
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="img_wrap">
+                                        <img src="./img/chairman_31.png">
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>2004년</span>
+                                                <div class="txt_wrap">
+                                                    <p>백인규</p>
+                                                    <p>졸업기수 8회</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <dl>
+                        <p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+                        <div>
+                            <dt class="cyears">
+                                <span>30대 회장</span>
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="img_wrap">
+                                        <img src="./img/chairman_30.png">
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>2003년</span>
+                                                <div class="txt_wrap">
+                                                    <p>김형섭</p>
+                                                    <p>졸업기수 7회</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <dl>
+                        <p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+                        <div>
+                            <dt class="cyears">
+                                <span>29대 회장</span>
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="img_wrap">
+                                        <img src="./img/chairman_29.png">
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>2002년</span>
+                                                <div class="txt_wrap">
+                                                    <p>송인오</p>
+                                                    <p>졸업기수 7회</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <dl>
+                        <p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+                        <div>
+                            <dt class="cyears">
+                                <span>28대 회장</span>
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="img_wrap">
+                                        <img src="./img/chairman_28.png">
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>2001년</span>
+                                                <div class="txt_wrap">
+                                                    <p>남태규</p>
+                                                    <p>졸업기수 6회</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <dl>
+                        <p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+                        <div>
+                            <dt class="cyears">
+                                <span>27대 회장</span>
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="img_wrap">
+                                        <img src="./img/chairman_27.png">
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>2000년</span>
+                                                <div class="txt_wrap">
+                                                    <p>이득형</p>
+                                                    <p>졸업기수 6회</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <dl>
+                        <p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+                        <div>
+                            <dt class="cyears">
+                                <span>25~26대 회장</span>
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="img_wrap">
+                                        <img src="./img/chairman_25.png">
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>1998년~1999년</span>
+                                                <div class="txt_wrap">
+                                                    <p>최진화</p>
+                                                    <p>졸업기수 5회</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <dl>
+                        <p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+                        <div>
+                            <dt class="cyears">
+                                <span>23~24대 회장</span>
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="img_wrap">
+                                        <img src="./img/chairman_23.png">
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>1996년~1997년</span>
+                                                <div class="txt_wrap">
+                                                    <p>김준환</p>
+                                                    <p>졸업기수 5회</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <dl>
+                        <p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+                        <div>
+                            <dt class="cyears">
+                                <span>21~22대 회장</span>
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="img_wrap">
+                                        <img src="./img/chairman_21.png">
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>1994년~1995년</span>
+                                                <div class="txt_wrap">
+                                                    <p>김일겸</p>
+                                                    <p>졸업기수 4회</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <dl>
+                        <p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+                        <div>
+                            <dt class="cyears">
+                                <span>20대 회장</span>
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="img_wrap">
+                                        <img src="./img/chairman_20.png">
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>1993년</span>
+                                                <div class="txt_wrap">
+                                                    <p>정인수</p>
+                                                    <p>졸업기수 2회</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <dl>
+                        <p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+                        <div>
+                            <dt class="cyears">
+                                <span>18~19대 회장</span>
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="img_wrap">
+                                        <img src="./img/chairman_18.png">
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>1991년~1992년</span>
+                                                <div class="txt_wrap">
+                                                    <p>서정윤</p>
+                                                    <p>졸업기수 2회</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <dl>
+                        <p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+                        <div>
+                            <dt class="cyears">
+                                <span>17대 회장</span>
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="img_wrap">
+                                        <img src="./img/chairman_17.png">
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>1990년</span>
+                                                <div class="txt_wrap">
+                                                    <p>김세근</p>
+                                                    <p>졸업기수 2회</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <dl>
+                        <p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+                        <div>
+                            <dt class="cyears">
+                                <span>15~16대 회장</span>
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="img_wrap">
+                                        <img src="./img/chairman_15.png">
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>1988년~1989년</span>
+                                                <div class="txt_wrap">
+                                                    <p>김용근</p>
+                                                    <p>졸업기수 2회</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <dl>
+                        <p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+                        <div>
+                            <dt class="cyears">
+                                <span>11~14대 회장</span>
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="img_wrap">
+                                        <img src="./img/chairman_11.png">
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>1984년~1987년</span>
+                                                <div class="txt_wrap">
+                                                    <p>이경우</p>
+                                                    <p>졸업기수 2회</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <dl>
+                        <p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+                        <div>
+                            <dt class="cyears">
+                                <span>10대 회장</span>
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="img_wrap">
+                                        <img src="./img/chairman_10.png">
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>1983년</span>
+                                                <div class="txt_wrap">
+                                                    <p>오신보</p>
+                                                    <p>졸업기수 1회</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <dl>
+                        <p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+                        <div>
+                            <dt class="cyears">
+                                <span>7~9대 회장</span>
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="img_wrap">
+                                        <img src="./img/chairman_7.png">
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>1980년~1982년</span>
+                                                <div class="txt_wrap">
+                                                    <p>신태수</p>
+                                                    <p>졸업기수 1회</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <dl>
+                        <p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+                        <div>
+                            <dt class="cyears">
+                                <span>3~6대 회장</span>
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="img_wrap">
+                                        <img src="./img/chairman_3.png">
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>1976년~1979년</span>
+                                                <div class="txt_wrap">
+                                                    <p>이강원</p>
+                                                    <p>졸업기수 1회</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <dl>
+                        <p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+                        <div>
+                            <dt class="cyears">
+                                <span>초대~2대 회장</span>
+                            </dt>
+                            <dd>
+                                <div>
+                                    <div class="img_wrap">
+                                        <img src="./img/chairman_1.png">
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <span>1974년~1975년</span>
+                                                <div class="txt_wrap">
+                                                    <p>박준석</p>
+                                                    <p>졸업기수 1회</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+
+        var buttons = document.querySelectorAll(".cyears span");
+        for (let i = 0; i < buttons.length; i++) {
+
+            buttons[i].addEventListener("click", function () {
+                document.querySelectorAll("dd")[i].classList.toggle("hide");
+            });
+
+        }
+    </script>
+</body>
+
+</html>

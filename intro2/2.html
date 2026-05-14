@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 20px 15px;
+        }
+
+        .intro-title {
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            color: #0067B6;
+            font-size: 18px;
+            margin: 20px 0 10px 0;
+            background-color: #F2F5F8;
+        }
+
+        dd {
+            display: none;
+        }
+
+        dd.show {
+            display: block;
+        }
+
+        .intro_history dl {
+            display: flex;
+
+            margin: 0;
+        }
+
+        .intro_history dl .cyears1 i {
+            display: none;
+        }
+
+        .intro_history dl .cyears1 {
+            position: relative;
+            display: block;
+            padding-top: 14px;
+            padding-left: 26px;
+            border-left: 2px solid #0067B6;
+            margin-left: 20px;
+        }
+
+        .intro_history .history_wrap {
+            padding-bottom: 15px;
+        }
+
+        .intro_history dl .cyears1:after {
+            display: block;
+            background: url(./img/history-circle.svg) no-repeat;
+            width: 30px;
+            height: 24px;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -14px;
+            background-size: contain;
+        }
+
+        .intro_history .history_wrap dd>div>div>ul>li {
+            width: 100%;
+        }
+
+        .intro_history .history_wrap dd>div>div>ul>li>span {
+            display: inline-block;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 1.5;
+            margin: 7px 0;
+            margin-left: 5px;
+        }
+
+        .intro_history .history_wrap .txt_wrap .txt_wrap_title {
+            width: 65px;
+            height: 24px;
+            background: #0067B6;
+            border-radius: 15px;
+            line-height: 24px;
+            text-align: center;
+            margin: 4px 7px 4px 0;
+            color: #fff;
+            font-size: 13px;
+        }
+
+        .intro_history .history_wrap .txt_wrap {
+            display: flex;
+            font-size: 15px;
+            width: 100%;
+            align-items: center;
+        }
+
+        .intro_history dl .cyears>span {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0067B6;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .intro_history dl>div {
+            padding-bottom: 30px;
+            width: 100%;
+        }
+
+        dd {
+            margin: 0;
+        }
+
+        .intro_history dd>span {
+            display: block;
+        }
+
+        .intro_history dl {
+            display: flex;
+        }
+
+        .intro_history dl .cyears {
+            cursor: pointer;
+        }
+
+        .intro_history dl .cyears>span {
+            font-size: 18px;
+            font-weight: 700;
+            color: #18429F;
+            padding-bottom: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .intro_history dl .cyears>span>div {
+            display: inline-block;
+            font-size: 14px;
+            background: #ecf5ff;
+            padding: 6px 12px;
+            border-radius: 10px;
+            color: #18429F;
+            font-weight: 600;
+        }
+
+        .intro_history dl .cyears1 i {
+            display: none;
+        }
+
+        .intro_history dl>div {
+            padding-bottom: 30px;
+            width: 100%;
+        }
+
+        .intro_history dl>div>dd>span {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .intro_history dl>div>dd>span:nth-child(2n) {
+            font-weight: 500;
+            padding-bottom: 4px;
+        }
+
+        .intro_history dl .cyears1 {
+            position: relative;
+            display: block;
+            padding-top: 14px;
+            padding-left: 26px;
+            border-left: 2px solid #18429F;
+            margin-left: 20px;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layout-wrap">
+        <div class="intro_history">
+            <div>
+                <dl>
+                    <p class="more cyears1">
+                        <i class="fa fa-plus-circle"></i>
+                    </p>
+                    <div>
+                        <dt class="cyears">
+                            <span>2026년
+                                <div class="moreBtn">더보기</div>
+                            </span>
+                        </dt>
+                        <dd class="show">
+                            <span>2026.02.05</span>
+                            <span>제53회 졸업식(140명) </span>
+                            <span>2025.03.03</span>
+                            <span>제57회 입학식(149명) </span>
+                        </dd>
+                    </div>
+                </dl>
+                <dl>
+                    <p class="more cyears1">
+                        <i class="fa fa-plus-circle"></i>
+                    </p>
+                    <div>
+                        <dt class="cyears">
+                            <span>2025년
+                                <div class="moreBtn">더보기</div>
+                            </span>
+                        </dt>
+                        <dd class="show">
+                            <span>2025.02.07</span>
+                            <span>제52회 졸업식(173명) </span>
+                            <span>2025.03.04</span>
+                            <span>제56회 입학식(151명) </span>
+                        </dd>
+                    </div>
+                </dl>
+                <dl>
+                    <p class="more cyears1">
+                        <i class="fa fa-plus-circle"></i>
+                    </p>
+                    <div>
+                        <dt class="cyears">
+                            <span>2024년
+                                <div class="moreBtn">더보기</div>
+                            </span>
+                        </dt>
+                        <dd class="show">
+                            <span>2024.03.04</span>
+                            <span>제55회 입학식(147명) </span>
+                        </dd>
+                    </div>
+                </dl>
+                <dl>
+                    <p class="more cyears1">
+                        <i class="fa fa-plus-circle"></i>
+                    </p>
+                    <div>
+                        <dt class="cyears">
+                            <span>2023년
+                                <div class="moreBtn">더보기</div>
+                            </span>
+                        </dt>
+                        <dd class="show">
+                            <span>2023.02.08</span>
+                            <span>제 51회 졸업식 176명 졸업중 포스코 43명 입사확정 (졸업생 누계 15,178명)</span>
+                            <span>2023.03.02</span>
+                            <span>제 54회 입학식 행사(150명)</span>
+                        </dd>
+                    </div>
+                </dl>
+                <dl>
+                    <p class="more cyears1">
+                        <i class="fa fa-plus-circle"></i>
+                    </p>
+                    <div>
+                        <dt class="cyears glace_navigationlayer-collapsed">
+                            <span>2022년
+                                <div class="moreBtn">더보기</div>
+                            </span>
+                        </dt>
+                        <dd style="">
+                            <span>2022.02.09</span>
+                            <span>제 50회 졸업식 행사 (졸업생 총계 15002명)</span>
+                            <span>2022.03.02</span>
+                            <span>제 53회 입학식 행사 (184명)</span>
+                        </dd>
+                    </div>
+                </dl>
+                <dl>
+                    <p class="more cyears1">
+                        <i class="fa fa-plus-circle"></i>
+                    </p>
+                    <div>
+                        <dt class="cyears glace_navigationlayer-collapsed">
+                            <span>2021년
+                                <div class="moreBtn">더보기</div>
+                            </span>
+                        </dt>
+                        <dd style="">
+                            <span>2021.02.04</span>
+                            <span>제49회 졸업식 거행(171명), 졸업생 총계 14,818명</span>
+                        </dd>
+                    </div>
+                </dl>
+                <dl>
+                    <p class="more cyears1">
+                        <i class="fa fa-plus-circle"></i>
+                    </p>
+                    <div>
+                        <dt class="cyears glace_navigationlayer-collapsed">
+                            <span>2020년
+                                <div class="moreBtn">더보기</div>
+                            </span>
+                        </dt>
+                        <dd style="">
+                            <span>2020.03.01</span>
+                            <span>학칙변경(재료기술과 3반, 자동화기계과 3반, 전기전자제어과 3반 9학급)</span>
+                        </dd>
+                    </div>
+                </dl>
+                <dl>
+                    <p class="more cyears1">
+                        <i class="fa fa-plus-circle"></i>
+                    </p>
+                    <div>
+                        <dt class="cyears glace_navigationlayer-collapsed">
+                            <span>2019년
+                                <div class="moreBtn">더보기</div>
+                            </span>
+                        </dt>
+                        <dd style="">
+                            <span>2019.05.31</span>
+                            <span>제과 명칭 변경승인(재료기술과, 자동화기계과, 전기전자제어과)</span>
+                        </dd>
+                    </div>
+                </dl>
+                <dl>
+                    <p class="more cyears1">
+                        <i class="fa fa-plus-circle"></i>
+                    </p>
+                    <div>
+                        <dt class="cyears glace_navigationlayer-collapsed">
+                            <span>2018년
+                                <div class="moreBtn">더보기</div>
+                            </span>
+                        </dt>
+                        <dd style="">
+                            <span>2018.03.02</span>
+                            <span>제 10대 이성열 교장 취임</span>
+                        </dd>
+                    </div>
+                </dl>
+                <dl>
+                    <p class="more cyears1">
+                        <i class="fa fa-plus-circle"></i>
+                    </p>
+                    <div>
+                        <dt class="cyears glace_navigationlayer-collapsed">
+                            <span>2017년
+                                <div class="moreBtn">더보기</div>
+                            </span>
+                        </dt>
+                        <dd style="">
+                            <span>2017.02.27</span>
+                            <span>제45회 졸업식 거행(176명), 졸업생 총계 14,107명</span>
+                        </dd>
+                    </div>
+                </dl>
+                <dl>
+                    <p class="more cyears1">
+                        <i class="fa fa-plus-circle"></i>
+                    </p>
+                    <div>
+                        <dt class="cyears glace_navigationlayer-collapsed">
+                            <span>2014년
+                                <div class="moreBtn">더보기</div>
+                            </span>
+                        </dt>
+                        <dd style="">
+                            <span>2014.03.03</span>
+                            <span>제 9대 황재호 교장 취임</span>
+                            <span>2014.02.12</span>
+                            <span>제42회 졸업시 거행(211명)졸업생 총계 13.545명</span>
+                        </dd>
+                    </div>
+                </dl>
+                <dl>
+                    <p class="more cyears1">
+                        <i class="fa fa-plus-circle"></i>
+                    </p>
+                    <div>
+                        <dt class="cyears glace_navigationlayer-collapsed">
+                            <span>2013년
+                                <div class="moreBtn">더보기</div>
+                            </span>
+                        </dt>
+                        <dd style="">
+                            <span>2013.03.06</span>
+                            <span>스마트 스쿨 준공</span>
+                            <span>2013.03.04</span>
+                            <span>제44회 입학식(마이스터고 개교)거행(188명)</span>
+                        </dd>
+                    </div>
+                </dl>
+                <dl>
+                    <p class="more cyears1">
+                        <i class="fa fa-plus-circle"></i>
+                    </p>
+                    <div>
+                        <dt class="cyears glace_navigationlayer-collapsed">
+                            <span>2012년
+                                <div class="moreBtn">더보기</div>
+                            </span>
+                        </dt>
+                        <dd style="">
+                            <span>2012.11.30</span>
+                            <span>다목적강당(웅비관)준공</span>
+                            <span>2012.05.25</span>
+                            <span>학칙변경 (철강기술과3, 철강생산자동화설비과3,철강전자제어시스템과3, 계 9학급 180명)</span>
+                            <span>2012.05.01</span>
+                            <span>특수목적고등학교(마이스터고등학교) 지정</span>
+                            <span>2012.01.12</span>
+                            <span>2011 특성화고 현장체험.현장실습 최우수학교 선정(교육과학기술부장관상)</span>
+                        </dd>
+                    </div>
+                </dl>
+                <dl>
+                    <p class="more cyears1">
+                        <i class="fa fa-plus-circle"></i>
+                    </p>
+                    <div>
+                        <dt class="cyears glace_navigationlayer-collapsed">
+                            <span>2016년
+                                <div class="moreBtn">더보기</div>
+                            </span>
+                        </dt>
+                        <dd style="">
+                            <span>2011.03.17</span>
+                            <span>2010 취업기능강화 특성화고 최우수학교 선정(교육과학기술부장관상)</span>
+                        </dd>
+                    </div>
+                </dl>
+                <dl>
+                    <p class="more cyears1">
+                        <i class="fa fa-plus-circle"></i>
+                    </p>
+                    <div>
+                        <dt class="cyears glace_navigationlayer-collapsed">
+                            <span>2001년
+                                <div class="moreBtn">더보기</div>
+                            </span>
+                        </dt>
+                        <dd style="">
+                            <span>2010.08.02</span>
+                            <span>대한민국 좋은 학교 박람회 참가학교 선정(교육과학기술부장관상)</span>
+                            <span>2010.06.07</span>
+                            <span>학칙변경 (재료기술과2, 자동화기계과3, 전기제어과2, 전자과2, 계 9학급)</span>
+                        </dd>
+                    </div>
+                </dl>
+                <dl>
+                    <p class="more cyears1">
+                        <i class="fa fa-plus-circle"></i>
+                    </p>
+                    <div>
+                        <dt class="cyears glace_navigationlayer-collapsed">
+                            <span>2009년
+                                <div class="moreBtn">더보기</div>
+                            </span>
+                        </dt>
+                        <dd style="">
+                            <span>2009.11.18</span>
+                            <span>제1회 중소기업 기술인재대전 최우수기관 표창(대통령상)</span>
+                        </dd>
+                    </div>
+                </dl>
+                <dl>
+                    <p class="more cyears1">
+                        <i class="fa fa-plus-circle"></i>
+                    </p>
+                    <div>
+                        <dt class="cyears glace_navigationlayer-collapsed">
+                            <span>2001년
+                                <div class="moreBtn">더보기</div>
+                            </span>
+                        </dt>
+                        <dd style="">
+                            <span>2001.06.07</span>
+                            <span>학칙변경 (재료기술과2,자동화기계과2,전기제어과1,산업전자과1,자동차산업과1,디지털컨텐크과1,컴퓨터네트워크과1,계 9학급)</span>
+                        </dd>
+                    </div>
+                </dl>
+                <dl>
+                    <p class="more cyears1">
+                        <i class="fa fa-plus-circle"></i>
+                    </p>
+                    <div>
+                        <dt class="cyears glace_navigationlayer-collapsed">
+                            <span>1980년
+                                <div class="moreBtn">더보기</div>
+                            </span>
+                        </dt>
+                        <dd style="">
+                            <span>1981.02.10</span><span>양학동 구교사에서 현 신축교사로 이전</span>
+                        </dd>
+                    </div>
+                </dl>
+                <dl>
+                    <p class="more cyears1">
+                        <i class="fa fa-plus-circle"></i>
+                    </p>
+                    <div>
+                        <dt class="cyears glace_navigationlayer-collapsed">
+                            <span>1970년
+                                <div class="moreBtn">더보기</div>
+                            </span>
+                        </dt>
+                        <dd style="">
+                            <span>1979.10.19</span>
+                            <span>학칙변경 (제선과1,제강과1,압연과2,기계정비과2,전기계장정비과1,계 7학급 350명)</span>
+                            <span>1978.10.23</span>
+                            <span>특수목적고등학교로 지정</span>
+                            <span>1978.09.01</span>
+                            <span>학교법인 제철학원에서 인수</span>
+                            <span>1978.03.01</span>
+                            <span>포항제철공업고등학교로 교명 변경</span>
+                            <span>1973.01.13</span>
+                            <span>제1회 졸업식 거행 (169명 졸업)</span>
+                            <span>1971.04.03</span>
+                            <span>개교식 및 교사 준공식 거행</span>
+                            <span>1970.06.16</span>
+                            <span>초대 이길수 교장 취임</span>
+                            <span>1970.03.12</span>
+                            <span>포항공업고등학교 개교(금속과1, 기계과2, 계 3학급 180명)</span>
+                        </dd>
+                    </div>
+                </dl>
+                <dl>
+                    <p class="more cyears1">
+                        <i class="fa fa-plus-circle"></i>
+                    </p>
+                    <div>
+                        <dt class="cyears glace_navigationlayer-collapsed">
+                            <span>1969년
+                                <div class="moreBtn">더보기</div>
+                            </span>
+                        </dt>
+                        <dd style="">
+                            <span>1969.11.22</span>
+                            <span>공립 포항공업고등학교 설립인가</span>
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        var buttons = document.querySelectorAll(".moreBtn");
+        for (let i = 0; i < buttons.length; i++) {
+
+            buttons[i].addEventListener("click", function () {
+                document.querySelectorAll("dd")[i].classList.toggle("show");
+            });
+
+        }
+    </script>
+</body>
+
+</html>

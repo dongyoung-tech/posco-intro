@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+        body {
+            margin: 0;
+            padding:0;
+            font-family: sans-serif;
+        }
+
+        .tab-bar {
+            padding: 0 10px;
+            z-index: 1;
+            background: white;
+            position: sticky;
+            top: 0;
+        }
+
+        .tab-button {
+            flex: 1;
+            padding: 16px;
+            border: none;
+            background: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .tab-button.active {
+            color: white;
+            padding: 10px 20px;
+            background-color: #18429F;
+            border-radius: 50px;
+            /* border-bottom: 2px solid #18429F; */
+            font-weight: bold;
+        }
+
+        .slider-wrapper {
+            overflow: hidden;
+            width: 100%;
+            touch-action: pan-y;
+        }
+
+        .slider {
+            display: flex;
+            width: 400%;
+            transition: transform 0.3s ease;
+        }
+
+        .tab-content {
+            width: 100vw;
+            flex-shrink: 0;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+
+        .tab-content iframe {
+            width: 100%;
+            border: 0;
+            display: block;
+            background: transparent;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="tab-bar">
+        <button class="tab-button active" data-tab="1">회장인사말</button>
+        <button class="tab-button" data-tab="2">연혁</button>
+        <button class="tab-button" data-tab="3">조직도</button>
+        <button class="tab-button" data-tab="4">역대회장</button>
+    </div>
+
+    <div class="slider-wrapper">
+        <div class="slider" id="slider">
+            <div id="tab-1" class="tab-content"></div>
+            <div id="tab-2" class="tab-content"></div>
+            <div id="tab-3" class="tab-content"></div> 
+            <div id="tab-4" class="tab-content"></div> 
+        </div>
+    </div>
+
+    <script>
+        const buttons = document.querySelectorAll('.tab-button');
+        const contents = document.querySelectorAll('.tab-content');
+        const slider = document.getElementById('slider');
+
+        let currentTab = 0;
+        let startX = 0;
+        let endX = 0;
+
+        function loadPage(id, file) {
+            const container = document.getElementById(id);
+
+            const iframe = document.createElement('iframe');
+
+            iframe.src = file;
+            iframe.scrolling = 'no';
+
+            container.innerHTML = '';
+            container.appendChild(iframe);
+
+            iframe.onload = () => {
+                const iframeDocument = iframe.contentWindow.document;
+
+                const resize = () => {
+                    iframe.style.height = iframeDocument.body.scrollHeight + 'px';
+                };
+
+                resize();
+
+                new ResizeObserver(resize).observe(
+                    iframeDocument.body
+                );
+
+                iframeDocument.addEventListener('touchstart', (e) => {
+                    startX = e.changedTouches[0].screenX;
+                }, { passive: true });
+
+                iframeDocument.addEventListener('touchend', (e) => {
+                    endX = e.changedTouches[0].screenX;
+
+                    const diffX = startX - endX;
+
+                    if (Math.abs(diffX) < 50) return;
+
+                    if (diffX > 0) {
+                        changeTab(currentTab + 1);
+                    } else {
+                        changeTab(currentTab - 1);
+                    }
+                }, { passive: true });
+            };
+        }
+
+        loadPage('tab-1', './intro1/1.html');
+        loadPage('tab-2', './intro2/2.html');
+        loadPage('tab-3', './intro3/3.html');
+        loadPage('tab-4', './intro4/4.html');
+
+        function changeTab(index) {
+            if (index < 0 || index >= buttons.length) return;
+
+            buttons.forEach(b => b.classList.remove('active'));
+
+            buttons[index].classList.add('active');
+
+            slider.style.transform = `translateX(-${index * 100}vw)`;
+
+            currentTab = index;
+        }
+
+        buttons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                changeTab(index);
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
