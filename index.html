@@ -8,12 +8,11 @@
     <style>
         body {
             margin: 0;
-            padding:0;
+            padding: 0;
             font-family: sans-serif;
         }
 
         .tab-bar {
-            padding: 0 10px;
             z-index: 1;
             background: white;
             position: sticky;
@@ -41,7 +40,6 @@
         .slider-wrapper {
             overflow: hidden;
             width: 100%;
-            touch-action: pan-y;
         }
 
         .slider {
@@ -54,7 +52,14 @@
             width: 100vw;
             flex-shrink: 0;
             box-sizing: border-box;
-            overflow-y: auto;
+            overflow: hidden;
+        }
+
+        .tab-content iframe {
+            width: 100%;
+            height: calc(100vh - 72px);
+            border: 0;
+            display: block;
         }
     </style>
 </head>
@@ -72,8 +77,8 @@
         <div class="slider" id="slider">
             <div id="tab-1" class="tab-content"></div>
             <div id="tab-2" class="tab-content"></div>
-            <div id="tab-3" class="tab-content"></div> 
-            <div id="tab-4" class="tab-content"></div> 
+            <div id="tab-3" class="tab-content"></div>
+            <div id="tab-4" class="tab-content"></div>
         </div>
     </div>
 
@@ -86,30 +91,51 @@
         let startX = 0;
         let endX = 0;
 
-        async function loadPage(id, file) {
-            const res = await fetch(file);
-            const html = await res.text();
+        function loadPage(id, file) {
+            const container = document.getElementById(id);
 
-            document.getElementById(id).innerHTML = html;
+            const iframe = document.createElement('iframe');
+            iframe.src = file;
+            iframe.style.width = '100%';
+            iframe.style.border = '0';
+            iframe.style.height = `calc(100vh - ${document.querySelector('.tab-bar').offsetHeight}px)`;
+
+            container.innerHTML = '';
+            container.appendChild(iframe);
+
+            iframe.onload = () => {
+                try {
+                    bindSwipe(iframe.contentWindow.document);
+                } catch (e) {
+                    console.log(e);
+                }
+            };
         }
 
-        document.addEventListener('touchstart', (e) => {
-            startX = e.touches[0].clientX;
-        }, { passive: true });
+        function bindSwipe(target) {
+            target.addEventListener('touchstart', (e) => {
+                if (e.touches.length !== 1) return;
+                startX = e.touches[0].clientX;
+            }, { passive: true });
 
-        document.addEventListener('touchend', (e) => {
-            endX = e.changedTouches[0].clientX;
+            target.addEventListener('touchend', (e) => {
+                if (e.changedTouches.length !== 1) return;
 
-            const diff = startX - endX;
+                endX = e.changedTouches[0].clientX;
 
-            if (Math.abs(diff) < 50) return;
+                const diff = startX - endX;
 
-            if (diff > 0) {
-                changeTab(currentTab + 1);
-            } else {
-                changeTab(currentTab - 1);
-            }
-        }, { passive: true });
+                if (Math.abs(diff) < 50) return;
+
+                if (diff > 0) {
+                    changeTab(currentTab + 1);
+                } else {
+                    changeTab(currentTab - 1);
+                }
+            }, { passive: true });
+        }
+
+        bindSwipe(document);
 
         loadPage('tab-1', './intro1/1.html');
         loadPage('tab-2', './intro2/2.html');
