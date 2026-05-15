@@ -1,103 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-      /* 조직도 */
-      body{
-        text-align: center;
-      }
-.org-wrap {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* 조직도 */
+    body {
+      text-align: center;
+    }
 
-.org-wrap input {
-  display: none;
-}  
+    .org-wrap {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
 
-.org-wrap label {
-	font-size: 11px;
+    .org-wrap input {
+      display: none;
+    }
 
-	padding: 8px 10px;
-	border-radius: 20px;
-	margin-right: 4px;
-	border: 1px solid #d2d2d2;
-	color: #d2d2d2;
-	text-align: center;
-}
-  
-.org-wrap label:hover {
-  cursor: pointer;
-}
- 
-.org-wrap input:checked + label {
-  font-weight: bold;
-  color: #fff;
-  font-size: 12px;
-  background: #18429F;
-  border: 1px solid #18429F;
-}
-  
-.tab-content {
-  width: 100%;
-  display: none;
-  margin-top: 20px;
-}
+    .org-wrap label {
+      font-size: 11px;
+      padding: 8px 10px;
+      border-radius: 20px;
+      margin-right: 4px;
+      border: 1px solid #d2d2d2;
+      color: #d2d2d2;
+      text-align: center;
+    }
 
-.tab-content img {
-	width: 100%;
-}
-  
-#tab1:checked ~ #content1,
-#tab2:checked ~ #content2,
-#tab3:checked ~ #content3,
-#tab4:checked ~ #content4 {
-  display: flex;
-  flex-wrap: wrap;
-}
-    </style>
-    <title>Document</title>
+    .org-wrap label:hover {
+      cursor: pointer;
+    }
+
+    .org-wrap input:checked+label {
+      font-weight: bold;
+      color: #fff;
+      font-size: 12px;
+      background: #18429F;
+      border: 1px solid #18429F;
+    }
+
+    .tab-content {
+      width: 100%;
+      display: none;
+      margin-top: 20px;
+    }
+
+    .tab-content img {
+      width: 100%;
+      cursor: zoom-in;
+    }
+
+    /* 이미지 팝업 */
+    .image-modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content-wrap {
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .modal-image {
+      width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 10000;
+    }
+
+    #tab1:checked~#content1,
+    #tab2:checked~#content2,
+    #tab3:checked~#content3,
+    #tab4:checked~#content4 {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  </style>
+  <title>Document</title>
 </head>
+
 <body>
-    <main class="sub-area">
-        <section class="sub-con-title">
-          <h1>조직도</h1>
-        </section>
-        <section class="sub-org-wrap layout-wrap">
-          <div class="org-wrap">
-            <input type="radio" name="tabs" id="tab1" checked="">
-              <label for="tab1">회장단</label>
-              <input type="radio" name="tabs" id="tab2">
-              <label for="tab2">임원진</label>
-              <input type="radio" name="tabs" id="tab3">
-              <label for="tab3">상임고문&amp;운영위원</label>
-              <input type="radio" name="tabs" id="tab4">
-              <label for="tab4">지구분회</label>
-      
-              <div id="content1" class="tab-content org1">
-                <img src="./img/org-img-2026.png" alt="회장단 명단">
-              </div>
-              <div id="content2" class="tab-content org2">
-                <img src="./img/org-img-2026-1.png" alt="2025년 52대 동문회 임원 명단1">
-                <img src="./img/org-img-2026-2.png" alt="2025년 52대 동문회 임원 명단2">
-                <img src="./img/org-img-2026-3.png" alt="2025년 52대 동문회 임원 명단3">
-              <!--  <img src="./img/org-img-2024-3.jpg" alt="2024년 51대 동문회 임원 명단">
+  <main class="sub-area">
+    <section class="sub-con-title">
+      <h1>조직도</h1>
+    </section>
+    <section class="sub-org-wrap layout-wrap">
+      <div class="org-wrap">
+        <input type="radio" name="tabs" id="tab1" checked="">
+        <label for="tab1">회장단</label>
+        <input type="radio" name="tabs" id="tab2">
+        <label for="tab2">임원진</label>
+        <input type="radio" name="tabs" id="tab3">
+        <label for="tab3">상임고문&amp;운영위원</label>
+        <input type="radio" name="tabs" id="tab4">
+        <label for="tab4">지구분회</label>
+
+        <div id="content1" class="tab-content org1">
+          <img src="./img/org-img-2026.png" alt="회장단 명단">
+        </div>
+        <div id="content2" class="tab-content org2">
+          <img src="./img/org-img-2026-1.png" alt="2025년 52대 동문회 임원 명단1">
+          <img src="./img/org-img-2026-2.png" alt="2025년 52대 동문회 임원 명단2">
+          <img src="./img/org-img-2026-3.png" alt="2025년 52대 동문회 임원 명단3">
+          <!--  <img src="./img/org-img-2024-3.jpg" alt="2024년 51대 동문회 임원 명단">
                  <img src="./img/org-img-2024-4.jpg" alt="2024년 51대 동문회 임원 명단">
                 <img src="./img/org-img-2024-5.jpg" alt="2024년 51대 동문회 임원 명단"> -->
-              </div>
-              <div id="content3" class="tab-content org3">
-                <img src="./img/org-img-2025-6.png" alt="상임고문 명단">
-                <img src="./img/org-img-2025-7.png" alt="운영위원 명단">
-              </div>
-              <div id="content4" class="tab-content org4">
-                <img src="./img/org-img-4.jpg" alt="2023년 지구분회 임원 명단">
-              </div>
-          </div>
-        </section>
-      </main>
+        </div>
+        <div id="content3" class="tab-content org3">
+          <img src="./img/org-img-2025-6.png" alt="상임고문 명단">
+          <img src="./img/org-img-2025-7.png" alt="운영위원 명단">
+        </div>
+        <div id="content4" class="tab-content org4">
+          <img src="./img/org-img-4.jpg" alt="2023년 지구분회 임원 명단">
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- 이미지 팝업 -->
+  <div id="imageModal" class="image-modal">
+    <span class="close-btn">&times;</span>
+    <div class="modal-content-wrap">
+      <img id="modalImage" class="modal-image" src="" alt="">
+    </div>
+  </div>
+  <script>
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImage");
+    const closeBtn = document.querySelector(".close-btn");
+
+    // 모든 조직도 이미지 선택
+    const images = document.querySelectorAll(".tab-content img");
+
+    images.forEach((img) => {
+      img.addEventListener("click", () => {
+        modal.style.display = "flex";
+        modalImg.src = img.src;
+        modalImg.alt = img.alt;
+      });
+    });
+
+    // 닫기 버튼
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    // 배경 클릭 시 닫기
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  </script>
 </body>
+
 </html>
