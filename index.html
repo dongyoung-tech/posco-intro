@@ -95,6 +95,7 @@
         let endX = 0;
         let currentTranslate = 0;
         let isDragging = false;
+        let isZoomed = false;
 
         function loadPage(id, file) {
             const container = document.getElementById(id);
@@ -110,16 +111,24 @@
 
             iframe.onload = () => {
                 try {
-                    bindSwipe(iframe.contentWindow.document);
+                    const iframeWindow = iframe.contentWindow;
+                    const iframeDocument = iframeWindow.document;
+
+                    bindSwipe(iframeDocument, iframeWindow);
                 } catch (e) {
                     console.log(e);
                 }
             };
         }
 
-        function bindSwipe(target) {
+        function bindSwipe(target, iframeWindow = window) {
             target.addEventListener('touchstart', (e) => {
                 if (e.touches.length !== 1) return;
+
+                const scale = iframeWindow.visualViewport?.scale || 1;
+                isZoomed = scale > 1;
+
+                if (isZoomed) return;
 
                 isDragging = true;
                 startX = e.touches[0].clientX;
@@ -130,6 +139,9 @@
             target.addEventListener('touchmove', (e) => {
                 if (!isDragging) return;
                 if (e.touches.length !== 1) return;
+
+                const scale = iframeWindow.visualViewport?.scale || 1;
+                if (scale > 1) return;
 
                 const currentX = e.touches[0].clientX;
                 const diff = currentX - startX;
@@ -152,6 +164,12 @@
 
             target.addEventListener('touchend', (e) => {
                 if (!isDragging) return;
+
+                const scale = iframeWindow.visualViewport?.scale || 1;
+                if (scale > 1) {
+                    isDragging = false;
+                    return;
+                }
 
                 isDragging = false;
 
@@ -182,6 +200,7 @@
         loadPage('tab-3', './intro3/3.html');
         loadPage('tab-4', './intro4/4.html');
 
+            
         function changeTab(index) {
             if (index < 0 || index >= buttons.length) return;
 
