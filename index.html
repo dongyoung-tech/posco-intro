@@ -141,7 +141,10 @@
                 if (e.touches.length !== 1) return;
 
                 const scale = iframeWindow.visualViewport?.scale || 1;
-                if (scale > 1) return;
+                if (scale > 1) {
+                    isDragging = false;
+                    return;
+                }
 
                 const currentX = e.touches[0].clientX;
                 const diff = currentX - startX;
@@ -166,12 +169,18 @@
                 if (!isDragging) return;
 
                 const scale = iframeWindow.visualViewport?.scale || 1;
-                if (scale > 1) {
+                if (scale > 1 || isZoomed) {
                     isDragging = false;
+                    isZoomed = false;
                     return;
                 }
 
                 isDragging = false;
+
+                const currentScale = iframeWindow.visualViewport?.scale || 1;
+                if (currentScale === 1) {
+                    startX = e.changedTouches[0].clientX;
+                }
 
                 endX = e.changedTouches[0].clientX;
 
