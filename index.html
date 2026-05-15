@@ -123,12 +123,19 @@
 
         function bindSwipe(target, iframeWindow = window) {
             target.addEventListener('touchstart', (e) => {
-                if (e.touches.length !== 1) return;
-
                 const scale = iframeWindow.visualViewport?.scale || 1;
                 isZoomed = scale > 1;
 
-                if (isZoomed) return;
+                // 확대 상태에서 시작된 제스쳐는 swipe 완전 차단
+                if (isZoomed) {
+                    isDragging = false;
+                    return;
+                }
+
+                if (e.touches.length !== 1) {
+                    isDragging = false;
+                    return;
+                }
 
                 isDragging = true;
                 startX = e.touches[0].clientX;
@@ -137,14 +144,11 @@
             }, { passive: true });
 
             target.addEventListener('touchmove', (e) => {
+                // 확대 상태에서 시작된 gesture 는 끝까지 무시
+                if (isZoomed) return;
+
                 if (!isDragging) return;
                 if (e.touches.length !== 1) return;
-
-                const scale = iframeWindow.visualViewport?.scale || 1;
-                if (scale > 1) {
-                    isDragging = false;
-                    return;
-                }
 
                 const currentX = e.touches[0].clientX;
                 const diff = currentX - startX;
@@ -166,21 +170,16 @@
             }, { passive: true });
 
             target.addEventListener('touchend', (e) => {
-                if (!isDragging) return;
-
-                const scale = iframeWindow.visualViewport?.scale || 1;
-                if (scale > 1 || isZoomed) {
-                    isDragging = false;
+                // 확대 상태에서 시작된 gesture 는 touchend 도 무시
+                if (isZoomed) {
                     isZoomed = false;
+                    isDragging = false;
                     return;
                 }
 
-                isDragging = false;
+                if (!isDragging) return;
 
-                const currentScale = iframeWindow.visualViewport?.scale || 1;
-                if (currentScale === 1) {
-                    startX = e.changedTouches[0].clientX;
-                }
+                isDragging = false;
 
                 endX = e.changedTouches[0].clientX;
 
